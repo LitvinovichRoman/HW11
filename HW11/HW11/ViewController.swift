@@ -23,10 +23,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         timeInfoLbl.text = "        "
         timeInfoLbl.backgroundColor = UIColor.systemGray6
+       
         // Do any additional setup after loading the view.
     }
 
     @IBAction func sliderValueChanged(_ sender: UISlider) {
+        sender.value = sender.value.rounded()
         let value = sender.value
         textfield.text = "\(value)"
         progressView.progress = value

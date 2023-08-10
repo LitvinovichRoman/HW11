@@ -38,7 +38,7 @@
                                         </constraints>
                                         <color key="trackTintColor" systemColor="systemRedColor"/>
                                     </progressView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TD4-AM-lhw">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="TD4-AM-lhw">
                                         <rect key="frame" x="35.666666666666657" y="113.33333333333334" width="282" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="278" id="ukg-9R-F9M"/>
