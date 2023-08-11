@@ -7,28 +7,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var textfield: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var setButton: UIButton!
-    @IBOutlet weak var timeInfoLbl: UILabel!
-    @IBOutlet weak var switchBtn: UISwitch!
-    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet private weak var progressView: UIProgressView!
+    @IBOutlet private weak var slider: UISlider!
+    @IBOutlet private weak var textfield: UITextField!
+    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var setButton: UIButton!
+    @IBOutlet private weak var timeInfoLbl: UILabel!
+    @IBOutlet private weak var switchBtn: UISwitch!
+    @IBOutlet private weak var clearButton: UIButton!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func setupUI(){
         timeInfoLbl.text = "        "
         timeInfoLbl.backgroundColor = UIColor.systemGray6
-       
-        // Do any additional setup after loading the view.
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
     }
 
     @IBAction func sliderValueChanged(_ sender: UISlider) {
-        sender.value = sender.value.rounded()
         let value = sender.value
         textfield.text = "\(value)"
         progressView.progress = value
@@ -44,11 +43,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func switchBtnAction(_ sender: UISwitch) {
-        if sender.isOn {
-               timeInfoLbl.backgroundColor = UIColor.systemGray5
-           } else {
-               timeInfoLbl.backgroundColor = UIColor.systemRed
-           }
+        timeInfoLbl.backgroundColor = sender.isOn ? UIColor.systemGray5 : UIColor.systemRed
     }
     
     @IBAction func clearBtnAction(_ sender: UIButton) {
@@ -57,4 +52,3 @@ class ViewController: UIViewController {
     }
     
 }
-
